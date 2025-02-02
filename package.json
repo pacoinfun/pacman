@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "powershell Copy-Item -Path src -Destination public -Recurse -Force; next build",
     "start": "next start",
     "lint": "next lint"
   },
