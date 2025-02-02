@@ -6,6 +6,10 @@ const nextConfig = {
     return [
       {
         source: '/',
+        destination: '/landing.html',
+      },
+      {
+        source: '/game',
         destination: '/index.html',
       },
       {

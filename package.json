@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "powershell Copy-Item -Path src,sounds,sprites,font,icon,images,*.html,*.js -Destination public -Recurse -Force -ErrorAction SilentlyContinue; next build",
+    "prebuild": "powershell New-Item -ItemType Directory -Force -Path public; Copy-Item -Path src,sounds,sprites,font,icon,images,*.html,*.js,landing.html -Destination public -Recurse -Force -ErrorAction SilentlyContinue",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -32,8 +33,7 @@
   },
   "devDependencies": {
     "eslint": "8.40.0",
-    "eslint-config-next": "13.4.2",
-    "file-loader": "^6.2.0"
+    "eslint-config-next": "13.4.2"
   },
   "engines": {
     "node": ">=18.0.0"
